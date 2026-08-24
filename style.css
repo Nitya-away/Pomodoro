@@ -179,3 +179,12 @@ button:hover {
     background: #7d665c;
     transform: translateY(-2px);
 }
+
+.room-page {
+    padding-bottom: 120px;
+}
+
+.hidden {
+    display: none !important;
+}
+

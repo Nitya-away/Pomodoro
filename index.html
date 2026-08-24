@@ -58,6 +58,29 @@
         </div>
     </section>
     
+
+    <section class="room-page page hidden" id="roomPage">
+        <nav>
+            <h2 onclick="getHome()">CozySpace</h2>
+            <div class="nav-links">
+                <div class="nav-item">
+                    <span onclick="scrollToSection('')">Focus</span>
+                </div>
+                <div class="nav-item">
+                    <span onclick="scrollToSection('')">Music</span>
+                </div>
+                <div class="nav-item">
+                    <span onclick="scrollToSection('')">Notes</span>
+                </div>
+            </div>
+            <select id="themeSelect" onchange="changeTheme()">
+                <option value="cozy-night">Cozy Night</option>
+                <option value="rainy-window">Rainy Window</option>
+                <option value="sakura-morning">Sakura Morning</option>
+                <option value="dark-academia">Dark Academia</option>
+            </select>
+        </nav>
+    </section>
 </body>
 
 </html>
