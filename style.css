@@ -1,0 +1,126 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    color: #7d665c;
+    overflow-x : hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.cozy-night {
+    background-image: linear-gradient(rgba(43,34,53,0.5), rgba(139,111,135,0.5)),
+    url(assets/imgs/cozy-night.jpg);
+}
+
+.pixel-cat {
+    position: fixed;
+    width: 90px;
+    z-index: 6;
+    pointer-events: none;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+    transition: left 0.12s ease, top 0.12s ease;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    width: calc(100% - 80px);
+    margin: 25px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,250,242,0.18);
+    border: 3px solid rgba(255,250,242,0.45);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    padding: 14px 22px;
+}
+
+nav h2 {
+    font-size: 42px;
+    color: #fffaf2;
+    text-shadow: 3px 3px 0 rgba(80,60,70,0.55);
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-items span {
+    display: block;
+    padding: 8px 18px;
+    border-radius: 14px;
+    background: rgba(255,250,242,0.18);
+    border: 2px solid rgba(255,250,242,0.45);
+    color: #fffaf2;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item span:hover {
+    background: rgba(255,250,242,0.45);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.tooltip-box {
+    position: absolute;
+    top: 62px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    width: 200px;
+    padding: 14px;
+    background: white;
+    color: #7d665c;
+    border: 3px solid #564841;
+    box-shadow: 6px 6px 0 rgba(0,0,0,0.25);
+    border-radius: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.24s ease, transform 0.24s ease;
+    z-index: 20;
+    text-align: center;
+}
+
+.tooltip-box img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.nav-item:hover .tooltip-box {
+    opacity: 1;
+    transform: translateX(-50%), translateY(0);
+}
+
+.tooltip-box p {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
