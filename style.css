@@ -124,3 +124,58 @@ nav h2 {
     line-height: 1.2;
 }
 
+.landing-content {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.landing-content h1 {
+    font-size: 5rem;
+    color: #fffaf2;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
+}
+
+.landing-content p {
+    max-width: 650px;
+    margin: 0 auto 20px;
+    color: #fffaf2;
+    font-size: 2rem;
+    line-height: 1.4;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.preview-window {
+    width: 100%;
+    max-width: 720px;
+    height: 360px;
+    margin: 0 auto 30px;
+    border: 6px solid rgba(255,250,242,0.9);
+    overflow: hidden;
+    background: #fffaf2;
+}
+
+.preview-window img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    border: none;
+    background: #817871;
+    color: #fffaf2;
+    padding: 12px 28px;
+    border-radius: 14px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #7d665c;
+    transform: translateY(-2px);
+}
