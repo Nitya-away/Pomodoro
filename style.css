@@ -220,7 +220,8 @@ select {
 
 
 .mode-buttons,
-.timer-controls {
+.timer-controls ,
+.sound-buttons {
     display: flex;
     justify-content: center;
     gap: 15px ;
@@ -232,9 +233,42 @@ select {
 }
 
 .mode-buttons button,
-.timer-controls button {
+.timer-controls button ,
+.sound-buttons button {
     font-size: 20px;
     padding: 10px 22px;
 }
 
+.small-widgets {
+    display: grid;
+    max-width: 1000px;
+    margin: 0 auto 25px;
+    padding: 0 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.soft-widget {
+    background: rgba(255,250,242,0.85);
+    border: 3px solid rgba(255,250,242,0.45);
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 185px;
+    color: #564841;
+}
+
+.soft-widget h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.soft-widget p {
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.quote-card {
+    font-style: italic;
+}
 
