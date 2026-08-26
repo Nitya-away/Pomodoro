@@ -31,5 +31,15 @@ function setCatMood(mood) {
 }
 
 
+const toastEl = document.getElementById('toast');
+let toastTimer = null;
+
+function showToast(message) {
+    toastEl.textContent = message;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
 const landingPage = document.getElementById('landingPage');
 const roomPage = document.getElementById('roomPage');
