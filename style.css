@@ -268,7 +268,79 @@ select {
     line-height: 1.4;
 }
 
-.quote-card {
+.quote-card p {
     font-style: italic;
 }
 
+.notes-section {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.notes-section h3 {
+    font-size: 2.5rem;
+    color: #fffaf2;
+    margin-bottom: 12px;
+    text-shadow: 0 4px 18px black;
+}
+
+
+.note-input {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.note-input input {
+    flex: 1;
+    border: none;
+    border-radius: 14px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: #7d665c;
+    background: rgba(255,250,242,0.9);
+    outline: none;
+}
+
+
+/* Will add more Later */
+.notes-wall {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mini-player {
+    position: fixed;
+    display: flex;
+    bottom: 25px;
+    left: 25px;
+    z-index: 6;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,250,242,0.9);
+    color: #7d665c;
+    padding: 12px 16px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+.album-art {
+    width: 45px;
+    height: 45px;
+    background: rgba(255,250,242,0.9);
+    border-radius: 10px;
+}
+
+.mini-track p {
+    font-size: 1.2rem;
+}
+
+.mini-player small {
+    font-size: 1rem;
+}
+
+.mini-track button {
+    padding: 8px 14px;
+    border-radius: 10px;
+}

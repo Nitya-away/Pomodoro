@@ -112,8 +112,28 @@
                 </div>
             </div>
         </section>
-        
-    </section>
-</body>
 
+        <section class="notes-section" id="notes-section">
+            <h3>Notes</h3>
+            <div class="note-input">
+                <input type="text" id="noteInput" placeholder="Write A Reminder For YourSelf">
+                <button onclick="addnote()">Add</button>
+            </div>
+            <div class="notes-wall" id="notesList"></div>
+        </section>
+    </section>
+
+    <div class="mini-player">
+        <div class="album-art"></div>
+        <div class="mini-track">
+            <p id="minisong">Lo-fi</p>
+            <small>Cozy Player</small>
+        </div>
+        <button onclick="playMusic()">Play</button>
+        <button onclick="pauseMusic()">Pause</button>
+    </div>
+
+    <audio id="audioPlayer" loop></audio>
+</body>
+<script src="script.js"></script>
 </html>
