@@ -184,7 +184,57 @@ button:hover {
     padding-bottom: 120px;
 }
 
-.hidden {
+/* .hidden {
     display: none !important;
+} */
+
+
+select {
+    font-size: 20px;
+    padding: 10px 22px;
+    border-radius: 14px;
+    border: 2px solid rgba(255,250,242,0.45);
+    background: rgba(255,250,242,0.85);
+    color: #7d665c;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
 }
+
+#timer-section {
+    text-align: center;
+    padding: 10px 20px 35px;
+    color: #fffaf2;
+}
+
+.section-label {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 15px;
+}
+
+.timer {
+    font-size: 100px;
+    line-height: 1;
+    margin: 10px 0 20px;
+    text-shadow: 0 8px 30px black;
+}
+
+
+.mode-buttons,
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px ;
+    flex-wrap: wrap;
+}
+
+.mode-buttons {
+    margin-bottom: 15px;
+}
+
+.mode-buttons button,
+.timer-controls button {
+    font-size: 20px;
+    padding: 10px 22px;
+}
+
 

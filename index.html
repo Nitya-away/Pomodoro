@@ -24,7 +24,7 @@
             <h2>CozySpace</h2>
             <div class="nav-links">
                 <div class="nav-item">
-                    <span onclick="enterRoom('')">Focus</span>
+                    <span onclick="enterRoom('timer-section')">Focus</span>
                     <div class="tooltip-box">
                         <img src="assets/imgs/focus.png" alt="focus">
                         <p>Start a cozy Pomodoro Session While You Study/Work.</p>
@@ -64,7 +64,7 @@
             <h2 onclick="getHome()">CozySpace</h2>
             <div class="nav-links">
                 <div class="nav-item">
-                    <span onclick="scrollToSection('')">Focus</span>
+                    <span onclick="scrollToSection('timer-section')">Focus</span>
                 </div>
                 <div class="nav-item">
                     <span onclick="scrollToSection('')">Music</span>
@@ -80,6 +80,23 @@
                 <option value="dark-academia">Dark Academia</option>
             </select>
         </nav>
+
+        <section class="timer-section" id="timer-section">
+            <p class="section-label">Focus Session</p>
+            <div class="timer" id="timer">30:00</div>
+            <div class="mode-buttons">
+                <button onclick="setMode(30)">Focus</button>
+                <button onclick="setMode(5)">Short Break</button>
+                <button onclick="setMode(15)">Long Break</button>
+            </div>
+            <div class="timer-controls">
+                <button onclick="startTimer()">Start</button>
+                <button onclick="pauseTimer()">Pause</button>
+                <button onclick="resetTimer()">Reset</button>
+            </div>
+        </section>
+
+
     </section>
 </body>
 
