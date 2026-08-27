@@ -43,3 +43,35 @@ function showToast(message) {
 
 const landingPage = document.getElementById('landingPage');
 const roomPage = document.getElementById('roomPage');
+
+function enterRoom(section) {
+    landingPage.classList.add('hidden');
+    roomPage.classList.remove('hidden');
+    if (section) {
+        setTimeout(() => scrollToSection(section), 50);
+    }
+}
+
+function scrollToSection(sectionId) {
+    const el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start'});
+}
+
+function getHome() {
+    pauseTimer();
+    roomPage.classList.add('hidden');
+    landingPage.classList.remove('hidden');
+}
+
+function changeTheme() {
+    const theme = document.getElementById('themeSelect').value;
+    document.body.className = theme;
+    localStorage.setItem('cozyTheme', theme);
+}
+
+function loadTheme() {
+    const saved = localStorage.getItem('cozyTheme');
+    if (!saved) return;
+    document.body.className = saved;
+    document.getElementById('themeSelect').value = saved;
+}

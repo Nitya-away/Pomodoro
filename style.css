@@ -20,7 +20,22 @@ body {
 
 .cozy-night {
     background-image: linear-gradient(rgba(43,34,53,0.5), rgba(139,111,135,0.5)),
-    url(assets/imgs/cozy-night.jpg);
+    url(assets/imgs/cozy-night.webp);
+}
+
+.rainy-window {
+    background-image: linear-gradient(rgba(30,40,55,0.55), rgba(70,90,120,0.55)),
+    url('assets/imgs/rainy-window.gif');
+}
+
+.sakura-morning {
+    background-image: linear-gradient(rgba(255,214,224,0.45), rgba(255,240,245,0.45)),
+    url('assets/imgs/sakura-morning.gif');
+}
+
+.dark-academia {
+    background-image: linear-gradient(rgba(35,25,20,0.6), rgba(90,60,40,0.6)),
+    url(assets/imgs/dark-academia.gif);
 }
 
 .pixel-cat {
@@ -184,9 +199,9 @@ button:hover {
     padding-bottom: 120px;
 }
 
-/* .hidden {
+.hidden {
     display: none !important;
-} */
+}
 
 
 select {
