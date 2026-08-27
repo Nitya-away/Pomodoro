@@ -177,3 +177,45 @@ function pauseMusic() {
     audioPlayer.pause();
 }
 
+const noteInput = document.getElementById('noteInput');
+const notesList = document.getElementById('notesList');
+
+function addnote() {
+    const text = noteInput.value.trim();
+    if (!text) return;
+    createNote(text);
+    noteInput.value = '';
+    saveNotes();
+}
+
+function createNote(text) {
+    const note = document.createElement('div');
+    note.className = 'note';
+    note.innerHTML = `<span>${text}</span><button onclick="deleteNote(this)">x</button>`;
+    notesList.appendChild(note);
+}
+
+function deleteNote(button) {
+    button.parentElement.remove();
+    saveNotes;
+}
+
+function saveNotes() {
+    const notes = [...document.querySelectorAll('.note span')].map(n => n.textContent);
+    localStorage.setItem('cozyNotes', JSON.stringify(notes));
+}
+
+function loadNotes() {
+    const saved = JSON.parse(localStorage.getItem('cozyNotes')) || [];
+    saved.forEach(text => createNote(text));
+}
+
+noteInput.addEventListener('keydown', e => {
+    if(e.kry === 'Enter') addnote();
+});
+
+
+loadTheme();
+loadNotes();
+updateTimer();
+chooseSound('lofi');

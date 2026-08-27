@@ -48,6 +48,29 @@ body {
     transition: left 0.12s ease, top 0.12s ease;
 }
 
+
+.toast {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(255,250,242,0.85);
+    color: #7d665c;
+    padding: 14px 28px;
+    border-radius: 14px;
+    font-size: 26px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 50;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 .page {
     min-height: 100vh;
 }
@@ -319,10 +342,64 @@ select {
 }
 
 
-/* Will add more Later */
 .notes-wall {
     display: flex;
     flex-wrap: wrap;
+    gap: 18px;
+    min-height: 120px;
+}
+
+.notes-wall:empty::before {
+    content: "Your Notes Will Be Shown Here";
+    color: #fffaf2;
+    font-size: 1.2rem;
+    opacity: 1;
+    text-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+
+.note {
+    width: 190px;
+    min-height: 160px;
+    background: #fffaf2;
+    color: #7d665c;
+    padding: 28px 16px 18px;
+    border-radius: 4px;
+    position: relative;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    box-shadow: 5px 6px 0 rgba(0,0,0,0.25);
+    transform:  rotate(-2deg);
+}
+
+.note:nth-child(even) {
+    background: #fffaf2;
+    transform: rotate(2deg);
+}
+
+.note:nth-child(3n) {
+    background: #fffaf2;
+    transform: rotate(-1deg);
+}
+
+
+.note::before {
+    content: "";
+    width: 50px;
+    height: 14px;
+    background: rgba(255,255,255,0.55);
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+}
+
+.note button {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    padding: 4px 10px;
+    font-size: 20px;
+    background: #564841;
 }
 
 .mini-player {
