@@ -124,3 +124,56 @@ function resetTimer() {
     time = selectedMinutes * 60;
     updateTimer();
 }
+
+const quoteText = document.getElementById('quote');
+
+const quotes = [
+    'Small Progress is Still Progress',
+    'You are worthy of love just for being who you ARE.',
+    'You can do hard things.',
+    'Believe in yourself and all that you are.',
+    'Your Future Self Will Thank You.',
+    'A calm mind brings inner strength.',
+    'You are the sky — everything else is just the weather.',
+    'The happiness of your life depends upon the quality of your thoughts.',
+    'Did You Drink Water Today?'
+]
+
+function newQuote() {
+    const i = Math.floor(Math.random() * quotes.length);
+    quoteText.textContent = quotes[i];
+}
+
+setInterval(newQuote, 5000);
+
+
+const audioPlayer = document.getElementById('audioPlayer');
+const musicName = document.getElementById('musicName');
+const minisong = document.getElementById('minisong');
+
+audioPlayer.volume = 0.4;
+
+const sounds = {
+    lofi: {name: 'Lo-fi Focus', src: 'assets/music/lofi.mp3'},
+    rain: {name: 'Rain', src: 'assets/music/rain.mp3'},
+    cafe: {name: 'Cafe', src: 'assets/music/cafe.mp3'},
+    fireplace: {name: 'FirePlace', src: 'assets/music/fireplace.mp3'},
+};
+
+function chooseSound(type) {
+    audioPlayer.src = sounds[type].src;
+    musicName.textContent = sounds[type].name;
+    minisong.textContent = sounds[type].name;
+}
+
+function playMusic() {
+    if (!audioPlayer.src || audioPlayer.src === window.location.href) {
+        chooseSound('lofi');
+    }
+    audioPlayer.play().catch(() => showToast('Click Play To Start Again'));
+}
+
+function pauseMusic() {
+    audioPlayer.pause();
+}
+
