@@ -436,3 +436,7 @@ select {
     padding: 8px 14px;
     border-radius: 10px;
 }
+
+.pointer {
+    cursor: pointer;
+}
