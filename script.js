@@ -75,3 +75,52 @@ function loadTheme() {
     document.body.className = saved;
     document.getElementById('themeSelect').value = saved;
 }
+
+const timerDisplay = document.getElementById('timer');
+
+let selectedMinutes = 30;
+let time = selectedMinutes * 60;
+let timerInterval = null;
+
+function updateTimer() {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function setMode(minutes) {
+    selectedMinutes = minutes;
+    resetTimer();
+}
+
+function startTimer() {
+    setCatMood('excited');
+    if (timerInterval !== null) return;
+
+    timerInterval = setInterval(() => {
+        if (time > 0) {
+            time--;
+            updateTimer();
+        } else {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            setCatMood('blink');
+            showToast(selectedMinutes === 30 ? 'Focus Session Completed, Touch Some Grass' : 'Break Over, Get Back To Work!!');
+            resetTimer();
+        }
+    }, 1000);
+}
+
+function pauseTimer() {
+    setCatMood('sleep');
+    clearInterval(timerInterval);
+    timerInterval = null;
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    setCatMood('blink');
+    time = selectedMinutes * 60;
+    updateTimer();
+}
